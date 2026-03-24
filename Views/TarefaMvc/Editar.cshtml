@@ -1,0 +1,105 @@
+@* @using Microsoft.EntityFrameworkCore.Metadata.Internal
+@using MVC.Models
+@model MVC.Models.TarefaMvc
+
+@{
+    ViewData["title"] = "Editar tarefa";
+}
+
+
+<h1>Editar tarefa</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="Data" class="control-label" type="date"></label>
+                <input asp-for="Data" class="form-control" />
+            </div>
+            <br />
+            <div>
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" asp-items="Html.GetEnumSelectList<EnumStatusTarefa>()"></select>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Atualizar" class"btn btn-online-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+</hr>
+
+<br />
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div> *@
+
+@* 
+@using MVC.Models *@
+@model MVC.Models.TarefaMvc
+@{
+    ViewData["Title"] = "Editar Tarefa";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Editar" method="post">
+            @* Hidden input to ensure ID is passed in form post *@
+            <input type="hidden" asp-for="Id" />
+
+            @* Validation Summary for backend errors *@
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Titulo" class="form-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Descricao" class="form-label"></label>
+                <textarea asp-for="Descricao" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Data" class="form-label"></label>
+                <input asp-for="Data" class="form-control" type="date" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Status" class="form-label"></label>
+                <select asp-for="Status" class="form-control"
+                        asp-items="Html.GetEnumSelectList<EnumStatusTarefa>()"></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+                <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

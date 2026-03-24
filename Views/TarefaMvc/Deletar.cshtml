@@ -1,0 +1,79 @@
+@* @model MVC.Models.TarefaMvc
+
+@{
+    ViewData["title"] = "Deletar tarefa";
+}
+<h1 style="color: red;"">Deseja realmente deletar esse contato? Essa operação é irreversível.</h1>
+
+<div>
+    <dl class=" row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Descricao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Status)
+        </dd>
+    </dl>
+</div>
+
+<form asp-action="Deletar">
+    <input type="submit" value="Deletar" class"btn btn-danger" />
+</form>
+
+<br />
+
+<a asp-action="Index"> Voltar</a> *@
+
+
+@model MVC.Models.TarefaMvc
+
+@{
+    ViewData["Title"] = "Deletar Tarefa";
+}
+
+<div class="container mt-4">
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Deseja realmente deletar este contato?</h4>
+        <p>Essa operação é irreversível.</p>
+    </div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(x => x.Titulo)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(x => x.Titulo)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(x => x.Descricao)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(x => x.Descricao)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(x => x.Data)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(x => x.Data)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(x => x.Status)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(x => x.Status)</dd>
+    </dl>
+
+    <form asp-action="Deletar" method="post" class="mt-3">
+        @* Segurança: Hidden input para o ID *@
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Confirmar Deletar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </form>
+</div>

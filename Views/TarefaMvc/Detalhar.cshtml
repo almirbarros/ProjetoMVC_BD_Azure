@@ -1,0 +1,76 @@
+@* @model MVC.Models.TarefaMvc
+
+@{
+    ViewData["title"] = "Detalhes da tarefa";
+}
+
+<h1>Detalhar</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3 col-md-2"> <!-- Largura do Label -->
+            @Html.DisplayNameFor(x => x.Titulo)
+        </dt>
+        <dd class="col-sm-9 col-md-10"> <!-- Largura do Valor -->
+            @Html.DisplayFor(x => x.Titulo)
+        </dd>
+        <dt class="col-sm-3 col-md-2"> <!-- Largura do Label -->
+            @Html.DisplayNameFor(x => x.Descricao)
+        </dt>
+        <dd class="col-sm-9 col-md-10"> <!-- Largura do Valor -->
+            @Html.DisplayFor(x => x.Descricao)
+        </dd>
+        <dt class="col-sm-3 col-md-2"> <!-- Largura do Label -->
+            @Html.DisplayNameFor(x => x.Data)
+        </dt>
+        <dd class="col-sm-9 col-md-10"> <!-- Largura do Valor -->
+            @Html.DisplayFor(x => x.Data)
+        </dd>
+        <dt class="col-sm-3 col-md-2"> <!-- Largura do Label -->
+            @Html.DisplayNameFor(x => x.Status)
+        </dt>
+        <dd class="col-sm-9 col-md-10"> <!-- Largura do Valor -->
+            @Html.DisplayFor(x => x.Status)
+        </dd>
+    </dl>
+</div>
+
+<a asp-action="Editar" asp-route-id="@Model.Id">Editar</a> |
+<a asp-action="Index">Voltar</a> *@
+
+@model MVC.Models.TarefaMvc
+@{
+    ViewData["Title"] = "Detalhes da Tarefa";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Detalhes</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row mb-0">
+                @* Titulo *@
+                <dt class="col-sm-3 col-md-2 text-muted">@Html.DisplayNameFor(x => x.Titulo)</dt>
+                <dd class="col-sm-9 col-md-10 fw-bold">@Html.DisplayFor(x => x.Titulo)</dd>
+
+                @* Descricao *@
+                <dt class="col-sm-3 col-md-2 text-muted">@Html.DisplayNameFor(x => x.Descricao)</dt>
+                <dd class="col-sm-9 col-md-10">@Html.DisplayFor(x => x.Descricao)</dd>
+
+                @* Data *@
+                <dt class="col-sm-3 col-md-2 text-muted">@Html.DisplayNameFor(x => x.Data)</dt>
+                <dd class="col-sm-9 col-md-10">@Html.DisplayFor(x => x.Data)</dd>
+
+                @* Status *@
+                <dt class="col-sm-3 col-md-2 text-muted">@Html.DisplayNameFor(x => x.Status)</dt>
+                <dd class="col-sm-9 col-md-10">
+                    <span class="badge bg-info text-dark">@Html.DisplayFor(x => x.Status)</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light">
+            <a asp-action="Editar" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Editar</a>
+            <a asp-action="Index" class="btn btn-outline-secondary btn-sm ms-2">Voltar</a>
+        </div>
+    </div>
+</div>

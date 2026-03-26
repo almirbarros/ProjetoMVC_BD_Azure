@@ -1,7 +1,8 @@
-## 🚀 Tecnologias Utilizadas
+# 🚀 Projeto MVC com Banco de dados Azure
 
 Este projeto foi construído utilizando as tecnologias mais recentes do ecossistema Microsoft:
 
+## 🛠️ Estrutura do Projeto e Tecnologias
 - **.NET 10**: Framework de desenvolvimento de alto desempenho.
 - **C#**: Linguagem de programação principal.
 - **ASP.NET Core MVC**: Padrão arquitetural para separar a lógica de negócios da interface do usuário.
@@ -9,6 +10,7 @@ Este projeto foi construído utilizando as tecnologias mais recentes do ecossist
 - **Entity Framework Core 10**: ORM para mapeamento objeto-relacional.
 - **Azure App Service**: Hospedagem da aplicação web.
 
+### 🖼️ Images
 - **Principal**
 <img width="1763" height="833" alt="01 - MVC - BD_Azure - Principal" src="https://github.com/user-attachments/assets/b4c36227-939d-4629-a79f-d25e88a4b3fe" />
 

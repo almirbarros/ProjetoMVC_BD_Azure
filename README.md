@@ -1,4 +1,4 @@
-# 🚀 Projeto MVC com Banco de dados Azure
+# ☁️ Projeto MVC com Banco de dados Azure
 
 Este projeto foi construído utilizando as tecnologias mais recentes do ecossistema Microsoft:
 
